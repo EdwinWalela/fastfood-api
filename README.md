@@ -1,6 +1,6 @@
 # FastFood API
 
-A REST API for the [FastFood Web App]()
+A REST API for the [FastFood Web App](https://github.com/EdwinWalela/fastfood)
 
 ## Tech Stack
 
