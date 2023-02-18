@@ -13,8 +13,6 @@ RUN pip install uwsgi
 
 COPY runner.sh /code/
 
-EXPOSE 8080
-
 ENV UWSGI_STATIC_MAP="/static/=/code/static/"
 ENV UWSGI_STATIC_EXPIRES_URI="/static/.*\.[a-f0-9]{12,}\.(css|js|png|jpg|jpeg|gif|ico|woff|ttf|otf|svg|scss|map|yml) 315360000"
 
