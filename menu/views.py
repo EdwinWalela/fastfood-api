@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from django.http import JsonResponse
+from rest_framework.response import Response
 from rest_framework import mixins, generics
 from .models import Category,MenuItem
 from .serializers import CategorySerializer,MenuItemSerializer
@@ -47,7 +47,18 @@ class MenuItemList(
   serializer_class = MenuItemSerializer
   
   def get(self,request,*args,**kwargs):
-    return self.list(request,*args,**kwargs)
+    categories = Category.objects.all()
+    category_serializer = CategorySerializer(categories,many=True)
+    
+    menu = {}
+    
+    for category in category_serializer.data:
+      menuItems = list(MenuItem.objects.filter(category=category['id']))
+      serializer = MenuItemSerializer(menuItems,many=True)
+      menu[category['title']] = serializer.data
+    
+    return Response(menu)
+    
   
   def post(self,request,*args,**kwargs):
     return self.create(request,*args,**kwargs)
