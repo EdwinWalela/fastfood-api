@@ -13,7 +13,7 @@ class MenuItem(models.Model):
   def __str__(self) -> str:
     return self.title
   
-  category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='menu_items')
+  category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='category')
   title = models.CharField(max_length=200)
   description = models.CharField(max_length=200)
   price = models.FloatField()                      

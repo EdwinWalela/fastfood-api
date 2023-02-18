@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt
 COPY . /app 
 
 
-RUN apt update && apt install gcc -y
+RUN apt install gcc -y
 RUN pip install uwsgi
 
 COPY runner.sh /code/
