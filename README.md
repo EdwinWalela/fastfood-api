@@ -2,6 +2,12 @@
 
 A REST API for the [FastFood Web App]()
 
+## Tech Stack
+
+- Python (Django Rest Framework)
+- Postgres (Database)
+- Swagger (Documentation)
+
 ## Local Development
 
 Clone repository
