@@ -13,7 +13,7 @@ A REST API for the [FastFood Web App](https://github.com/EdwinWalela/fastfood)
 Clone repository
 
 ```bash
-git clone
+git clone https://github.com/EdwinWalela/fastfood-api
 ```
 
 Create .env file
