@@ -12,8 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
   class Meta:
     model = Category
     fields = ['id','title']
-    
-  
+
 class MenuItemSerializer(serializers.ModelSerializer):
   category = CategoryRelatedField(
     queryset=Category.objects.all
