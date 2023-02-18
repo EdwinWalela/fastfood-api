@@ -8,3 +8,12 @@ class Category(models.Model):
     return self.title
   
   title = models.CharField(max_length=200)  
+
+class MenuItem(models.Model):
+  def __str__(self) -> str:
+    return self.title
+  
+  category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='menu_items')
+  title = models.CharField(max_length=200)
+  description = models.CharField(max_length=200)
+  price = models.FloatField()                      
